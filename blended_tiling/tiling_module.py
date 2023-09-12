@@ -39,7 +39,7 @@ class TilingModule(torch.nn.Module):
         self._tile_overlap = cast(
             Tuple[float, float], tuple(self._prep_values(tile_overlap))
         )
-        assert all([0.0 <= o <= 0.5 for o in self._tile_overlap])
+        # assert all([0.0 <= o <= 0.5 for o in self._tile_overlap])
         base_size = cast(List[int], list(self._prep_values(base_size)))
         assert self._tile_size[0] <= base_size[0] and self._tile_size[1] <= base_size[1]
         tiles, self._coords, self._overlap = self._get_tiles_and_coords(
